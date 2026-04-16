@@ -13,20 +13,21 @@ WAIT_MS="${WAIT_MS:-700}"
 usage() {
   cat <<EOF
 Usage:
-  $(basename "$0") prepare <project-name> [--single]
+  $(basename "$0") prepare <project-name> [--single] [--empty]
   $(basename "$0") export <project-name> [--first]
   $(basename "$0") export-all
   $(basename "$0") doctor
   $(basename "$0") help
 
 Examples:
-  ./scripts/projectctl.sh prepare adversment-1
-  ./scripts/projectctl.sh prepare adversment-2 --single
-  ./scripts/projectctl.sh export adversment-1
-  ./scripts/projectctl.sh export adversment-2 --first
-  ./scripts/projectctl.sh export-all
+  ./scripts/projectctl.sh prepare framex
+  ./scripts/projectctl.sh prepare poster1 --single
+  ./scripts/projectctl.sh prepare draft-post --empty
+  ./scripts/projectctl.sh export framex
+  ./scripts/projectctl.sh export poster1 --first
 EOF
 }
+
 
 log()  { echo "[$(date +'%H:%M:%S')] $*"; }
 warn() { echo "⚠️  $*" >&2; }
@@ -197,13 +198,26 @@ EOF
 
 cmd_prepare() {
   local name="${1:-}"
-  local mode="${2:-}"
+  shift || true
 
   [[ -z "$name" ]] && read -rp "Enter project name: " name
   [[ -z "$name" ]] && die "Project name is required."
 
   local single_mode=false
-  [[ "$mode" == "--single" ]] && single_mode=true
+  local empty_mode=false
+
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --single) single_mode=true ;;
+      --empty)  empty_mode=true ;;
+      *) die "Unknown option for prepare: $1" ;;
+    esac
+    shift
+  done
+
+  if $single_mode && $empty_mode; then
+    die "Use either --single or --empty, not both."
+  fi
 
   name="$(sanitize_name "$name")"
   [[ -z "$name" ]] && name="project"
@@ -223,6 +237,19 @@ cmd_prepare() {
   local png_dir="$pdir/png"
 
   mkdir -p "$html_dir" "$png_dir"
+  ensure_export_script "$pdir"
+
+  log "Creating project: $pdir"
+
+  if $empty_mode; then
+    echo "Created empty project structure only."
+    echo
+    echo "✅ Project ready"
+    echo "Project: $pdir"
+    echo "HTML   : $html_dir"
+    echo "PNG    : $png_dir"
+    return 0
+  fi
 
   shopt -s nullglob
   local files=(
@@ -232,14 +259,12 @@ cmd_prepare() {
   )
   shopt -u nullglob
 
-  [[ ${#files[@]} -eq 0 ]] && die "No HTML files found in $WIN_DOWNLOADS"
-
-  log "Creating project: $pdir"
+  [[ ${#files[@]} -eq 0 ]] && die "No HTML files found in $WIN_DOWNLOADS (or use --empty)"
 
   if $single_mode; then
     local chosen_file=""
-    local f
     local best_num=9999
+    local f
 
     for f in "${files[@]}"; do
       local num
@@ -252,7 +277,7 @@ cmd_prepare() {
       fi
     done
 
-    [[ -z "$chosen_file" ]] && die "No valid HTML file found for single prepare mode."
+    [[ -z "$chosen_file" ]] && die "No valid HTML file found for single mode."
 
     local dest="$html_dir/slide1.html"
     mv "$chosen_file" "$dest"
@@ -269,8 +294,6 @@ cmd_prepare() {
       echo "Moved: $(basename "$f") -> html/$(basename "$dest")"
     done
   fi
-
-  ensure_export_script "$pdir"
 
   echo
   echo "✅ Project ready"
