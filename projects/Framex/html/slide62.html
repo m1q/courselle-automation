@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FrameX - Slide 6</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --text: #111111;
+      --muted: #5f6368;
+      --accent: #ff6b4a;
+      --line: rgba(17,17,17,0.08);
+      --card-light: #ffffff;
+      --card-dark: #111111;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #dcdcdc;
+      font-family: "Cairo", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .slide {
+      width: 1080px;
+      height: 1350px;
+      position: relative;
+      overflow: hidden;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 100px 100px;
+      z-index: 1;
+    }
+
+    .top {
+      position: absolute;
+      top: 60px;
+      left: 72px;
+      right: 72px;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .label {
+      font-size: 22px;
+      font-weight: 800;
+      border: 1px solid var(--text);
+      padding: 10px 20px;
+      border-radius: 999px;
+    }
+
+    .counter {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      padding: 200px 72px 0;
+    }
+
+    .mini {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .title {
+      font-size: 85px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 50px;
+    }
+
+    .accent-text { color: var(--accent); }
+
+    .compare-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .box {
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+    }
+
+    .box-light {
+      background: var(--card-light);
+    }
+
+    .box-dark {
+      background: var(--card-dark);
+      color: white;
+      border: none;
+    }
+
+    .box h3 {
+      font-size: 30px;
+      font-weight: 800;
+      margin: 0 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .box-light h3::before { content: "✕"; color: var(--accent); }
+    .box-dark h3::before { content: "✓"; color: #2ecc71; }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .chip {
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 22px;
+      font-weight: 700;
+      background: rgba(17,17,17,0.05);
+    }
+
+    .box-dark .chip {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .result-box {
+      margin-top: 40px;
+      background: var(--accent);
+      color: white;
+      padding: 30px;
+      border-radius: 16px;
+      font-size: 26px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 50px;
+      left: 72px;
+      right: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand { font-size: 28px; font-weight: 800; }
+
+    .progress { display: flex; gap: 10px; }
+    .progress span { width: 48px; height: 6px; border-radius: 999px; background: var(--line); }
+    .progress span.active { width: 76px; background: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <section class="slide">
+    <div class="grid-lines"></div>
+
+    <div class="top">
+      <div class="label">رؤية FrameX</div>
+      <div class="counter">6/7</div>
+    </div>
+
+    <div class="content">
+      <p class="mini">السبب الرابع</p>
+      <h1 class="title">تستهدف <span class="accent-text">الناس الخطأ</span></h1>
+
+      <div class="compare-container">
+        <div class="box box-light">
+          <h3>الخطأ الشائع</h3>
+          <div class="chips">
+            <span class="chip">تخاطب الجميع</span>
+            <span class="chip">استهداف واسع جداً</span>
+            <span class="chip">رسالة عامة ومبهمة</span>
+          </div>
+        </div>
+
+        <div class="box box-dark">
+          <h3>الأفضل لنتائج حقيقية</h3>
+          <div class="chips">
+            <span class="chip">جمهور محدد وواضح</span>
+            <span class="chip">رسالة تفهم حاجتهم</span>
+            <span class="chip">عرض يحل مشكلتهم</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-box">
+        كلما كان الإعلان أقرب للشخص المناسب، زاد التحويل.
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="brand">@framex</div>
+      <div class="progress">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="active"></span>
+        <span></span>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FrameX - Slide 2 (Iraqi Dialect)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --text: #111111;
+      --muted: #5f6368;
+      --accent: #ff6b4a;
+      --line: rgba(17,17,17,0.08);
+      --card: rgba(255,255,255,0.95);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #dcdcdc;
+      font-family: "Cairo", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .slide {
+      width: 1080px;
+      height: 1350px;
+      position: relative;
+      overflow: hidden;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 100px 100px;
+      z-index: 1;
+    }
+
+    .top {
+      position: absolute;
+      top: 60px;
+      left: 72px;
+      right: 72px;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .label {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      border: 1px solid var(--text);
+      padding: 10px 20px;
+      border-radius: 999px;
+    }
+
+    .counter {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      padding: 220px 72px 0;
+    }
+
+    .bg-word {
+      position: absolute;
+      top: 140px;
+      right: 40px;
+      font-size: 280px;
+      font-weight: 900;
+      color: rgba(17,17,17,0.03);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .mini {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 85px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin: 0 0 50px;
+    }
+
+    .accent-text {
+      color: var(--accent);
+    }
+
+    .reality-card {
+      background: var(--card);
+      padding: 50px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.02);
+      position: relative;
+    }
+
+    .reality-card p {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.6;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 50px;
+      left: 72px;
+      right: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .progress {
+      display: flex;
+      gap: 12px;
+    }
+
+    .progress span {
+      width: 48px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--line);
+    }
+
+    .progress span.active {
+      width: 76px;
+      background: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <section class="slide">
+    <div class="grid-lines"></div>
+
+    <div class="top">
+      <div class="label">رؤية FrameX</div>
+      <div class="counter">2/7</div>
+    </div>
+
+    <div class="content">
+      <div class="bg-word">واقع</div>
+      
+      <p class="mini">الحقيقة المرة</p>
+      <h1 class="title">
+        فيسبوك أخذ فلوسه..<br>
+        <span class="accent-text">والنتيجة؟</span>
+      </h1>
+
+      <div class="reality-card">
+        <p>
+          فيسبوك شغلته يوصل إعلانك للناس، وهاي سواها وأخذ حسابه كامل. بس ليش محد اشترى؟ <br><br>
+          <span style="color: var(--accent);">لأن الوصول مو معناه بيع.</span> البيع يحتاج إقناع، مو بس صرف فلوس.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="brand">@framex</div>
+      <div class="progress">
+        <span></span>
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

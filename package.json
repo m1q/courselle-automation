@@ -1,0 +1,27 @@
+{
+  "name": "courselle-automation",
+  "version": "1.0.0",
+  "description": "أتمتة إنشاء محتوى لـ Courselle - تصدير شرائح HTML إلى صور PNG",
+  "main": "src/export.js",
+  "scripts": {
+    "export": "node src/export.js",
+    "export-all": "node scripts/export-all.js",
+    "clean": "rm -rf output/*",
+    "setup": "npm install"
+  },
+  "keywords": [
+    "courselle",
+    "automation",
+    "content-creation",
+    "html-to-png",
+    "playwright"
+  ],
+  "author": "محمد حليم رحيم كريم",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  }
+}
