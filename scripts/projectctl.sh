@@ -13,15 +13,17 @@ WAIT_MS="${WAIT_MS:-700}"
 usage() {
   cat <<EOF
 Usage:
-  $(basename "$0") prepare <project-name>
-  $(basename "$0") export <project-name>
+  $(basename "$0") prepare <project-name> [--single]
+  $(basename "$0") export <project-name> [--first]
   $(basename "$0") export-all
   $(basename "$0") doctor
   $(basename "$0") help
 
 Examples:
-  ./scripts/projectctl.sh prepare framex
-  ./scripts/projectctl.sh export framex
+  ./scripts/projectctl.sh prepare adversment-1
+  ./scripts/projectctl.sh prepare adversment-2 --single
+  ./scripts/projectctl.sh export adversment-1
+  ./scripts/projectctl.sh export adversment-2 --first
   ./scripts/projectctl.sh export-all
 EOF
 }
@@ -107,6 +109,7 @@ const { chromium } = require('playwright');
 const VIEWPORT_WIDTH = parseInt(process.env.VIEWPORT_WIDTH || '${VIEWPORT_WIDTH}', 10);
 const VIEWPORT_HEIGHT = parseInt(process.env.VIEWPORT_HEIGHT || '${VIEWPORT_HEIGHT}', 10);
 const WAIT_MS = parseInt(process.env.WAIT_MS || '${WAIT_MS}', 10);
+const EXPORT_FIRST_ONLY = process.env.EXPORT_FIRST_ONLY === '1';
 
 function getSlideNumber(filename) {
   const match = filename.match(/^slide(\\d+)\\.html\$/i);
@@ -125,7 +128,7 @@ function getSlideNumber(filename) {
 
   fs.mkdirSync(pngDir, { recursive: true });
 
-  const htmlFiles = fs
+  let htmlFiles = fs
     .readdirSync(htmlDir)
     .filter(file => /^slide\\d+\\.html\$/i.test(file))
     .sort((a, b) => getSlideNumber(a) - getSlideNumber(b));
@@ -133,6 +136,10 @@ function getSlideNumber(filename) {
   if (htmlFiles.length === 0) {
     console.error('No slide HTML files found in html folder.');
     process.exit(1);
+  }
+
+  if (EXPORT_FIRST_ONLY) {
+    htmlFiles = [htmlFiles[0]];
   }
 
   const browser = await chromium.launch({ headless: true });
@@ -190,8 +197,13 @@ EOF
 
 cmd_prepare() {
   local name="${1:-}"
+  local mode="${2:-}"
+
   [[ -z "$name" ]] && read -rp "Enter project name: " name
   [[ -z "$name" ]] && die "Project name is required."
+
+  local single_mode=false
+  [[ "$mode" == "--single" ]] && single_mode=true
 
   name="$(sanitize_name "$name")"
   [[ -z "$name" ]] && name="project"
@@ -214,9 +226,9 @@ cmd_prepare() {
 
   shopt -s nullglob
   local files=(
-    $WIN_DOWNLOADS/preview.html
-    $WIN_DOWNLOADS/preview\ \(*\).html
-    $WIN_DOWNLOADS/slide*.html
+    "$WIN_DOWNLOADS"/preview.html
+    "$WIN_DOWNLOADS"/preview\ \(*\).html
+    "$WIN_DOWNLOADS"/slide*.html
   )
   shopt -u nullglob
 
@@ -224,15 +236,39 @@ cmd_prepare() {
 
   log "Creating project: $pdir"
 
-  for f in "${files[@]}"; do
-    local num
-    num="$(get_slide_num "$f")"
-    [[ "$num" == "9999" ]] && continue
+  if $single_mode; then
+    local chosen_file=""
+    local f
+    local best_num=9999
 
-    local dest="$html_dir/slide${num}.html"
-    mv "$f" "$dest"
-    echo "Moved: $(basename "$f") -> html/$(basename "$dest")"
-  done
+    for f in "${files[@]}"; do
+      local num
+      num="$(get_slide_num "$f")"
+      [[ "$num" == "9999" ]] && continue
+
+      if (( num < best_num )); then
+        best_num="$num"
+        chosen_file="$f"
+      fi
+    done
+
+    [[ -z "$chosen_file" ]] && die "No valid HTML file found for single prepare mode."
+
+    local dest="$html_dir/slide1.html"
+    mv "$chosen_file" "$dest"
+    echo "Moved(single): $(basename "$chosen_file") -> html/slide1.html"
+  else
+    local f
+    for f in "${files[@]}"; do
+      local num
+      num="$(get_slide_num "$f")"
+      [[ "$num" == "9999" ]] && continue
+
+      local dest="$html_dir/slide${num}.html"
+      mv "$f" "$dest"
+      echo "Moved: $(basename "$f") -> html/$(basename "$dest")"
+    done
+  fi
 
   ensure_export_script "$pdir"
 
@@ -245,8 +281,13 @@ cmd_prepare() {
 
 cmd_export() {
   local name="${1:-}"
+  local mode="${2:-}"
+
   [[ -z "$name" ]] && read -rp "Enter project name to export: " name
   [[ -z "$name" ]] && die "Project name is required."
+
+  local first_only=0
+  [[ "$mode" == "--first" ]] && first_only=1
 
   local pdir
   pdir="$(project_dir "$name")"
@@ -270,6 +311,7 @@ cmd_export() {
     VIEWPORT_WIDTH="$VIEWPORT_WIDTH" \
     VIEWPORT_HEIGHT="$VIEWPORT_HEIGHT" \
     WAIT_MS="$WAIT_MS" \
+    EXPORT_FIRST_ONLY="$first_only" \
     node "$pdir/export-all.js"
   )
 
