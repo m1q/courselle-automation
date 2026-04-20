@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrameX - Slide 6 (Final Fix)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root { 
+      --bg: #f7f7f5; 
+      --text: #111111; 
+      --accent: #ff6b4a; 
+      --line: rgba(17,17,17,0.06); 
+    }
+    
+    * { box-sizing: border-box; font-family: 'Cairo', sans-serif; margin: 0; padding: 0; }
+    
+    body { 
+      background: #dcdcdc; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 100vh; 
+      padding: 20px;
+    }
+    
+    .slide { 
+      width: 1080px; 
+      height: 1350px; 
+      background: var(--bg); 
+      color: var(--text); 
+      position: relative; 
+      overflow: hidden; 
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 50px 100px rgba(0,0,0,0.1);
+    }
+
+    .grid-lines { 
+      position: absolute; 
+      inset: 0; 
+      background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); 
+      background-size: 80px 80px; 
+      z-index: 1;
+    }
+
+    .top-section { 
+      padding: 60px 80px 20px; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      position: relative;
+      z-index: 10;
+    }
+    
+    .label { 
+      font-size: 24px; 
+      font-weight: 800; 
+      border: 2px solid var(--text); 
+      padding: 10px 30px; 
+      border-radius: 999px; 
+    }
+    
+    .counter { 
+      font-size: 32px; 
+      font-weight: 700; 
+      opacity: 0.5; 
+    }
+
+    .main-content { 
+      flex: 1; 
+      padding: 0 80px; 
+      position: relative; 
+      z-index: 10; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: -20px; /* Adjusting for balance */
+    }
+
+    .mini { 
+      font-size: 36px; 
+      font-weight: 800; 
+      color: var(--accent); 
+      margin-bottom: 15px; 
+    }
+    
+    .title { 
+      font-size: 88px; 
+      font-weight: 900; 
+      line-height: 1.1; 
+      margin-bottom: 50px; 
+    }
+
+    .solution-card { 
+      background: #111111; 
+      color: #ffffff; 
+      padding: 60px 50px; 
+      border-radius: 40px; 
+      box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+    }
+    
+    .solution-card h3 { 
+      font-size: 42px; 
+      color: var(--accent); 
+      margin-bottom: 35px; 
+      font-weight: 900; 
+    }
+
+    .step-list { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 20px; 
+    }
+
+    .step-item { 
+      background: rgba(255,255,255,0.05); 
+      padding: 30px 35px; 
+      border-radius: 20px; 
+      font-size: 30px; 
+      font-weight: 700; 
+      display: flex; 
+      align-items: center; 
+      gap: 25px; 
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .step-item::before { 
+      content: "✓"; 
+      color: #2ecc71; 
+      font-weight: 900; 
+      font-size: 38px; 
+      background: rgba(46, 204, 113, 0.15);
+      width: 60px;
+      height: 60px;
+      min-width: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+    }
+
+    .footer { 
+      padding: 40px 80px 60px; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      position: relative;
+      z-index: 10;
+    }
+    
+    .brand { font-size: 30px; font-weight: 900; }
+    
+    .progress { display: flex; gap: 12px; }
+    .progress span { 
+      width: 45px; 
+      height: 8px; 
+      border-radius: 10px; 
+      background: rgba(0,0,0,0.08); 
+    }
+    .progress span.active { 
+      width: 80px; 
+      background: var(--accent); 
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <div class="grid-lines"></div>
+
+    <!-- Header -->
+    <div class="top-section">
+      <div class="label">نصائح FrameX</div>
+      <div class="counter">6/7</div>
+    </div>
+
+    <!-- Content -->
+    <div class="main-content">
+      <p class="mini">الحل العملي</p>
+      <h1 class="title">شلون تخلي الزبون<br><span style="color:var(--accent)">"يشتري؟"</span></h1>
+      
+      <div class="solution-card">
+        <h3>الخطوات السحرية:</h3>
+        <div class="step-list">
+          <div class="step-item">اسأله سؤال يخص احتياجه أولاً</div>
+          <div class="step-item">اشرحله ميزة وحدة قوية بمنتجك</div>
+          <div class="step-item">انطيه السعر وياه "عرض" خاص</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="brand">@framex</div>
+      <div class="progress">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span class="active"></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

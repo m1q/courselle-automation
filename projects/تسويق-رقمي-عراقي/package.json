@@ -1,0 +1,12 @@
+{
+  "name": "تسويق-رقمي-عراقي",
+  "version": "1.0.0",
+  "description": "كروسيل تسويق رقمي للشركات الصغيرة في العراق بنمط FrameX العراقي",
+  "main": "export-all.js",
+  "scripts": {
+    "export": "node export-all.js"
+  },
+  "keywords": ["framex", "تسويق", "رقمي", "عراقي", "carousel"],
+  "author": "FrameX Team",
+  "license": "MIT"
+}

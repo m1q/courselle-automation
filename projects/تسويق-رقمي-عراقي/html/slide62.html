@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسويق رقمي - الشريحة 6</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #1a1a1a;
+            color: white;
+            width: 1080px;
+            height: 1350px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+        
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .label {
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .counter {
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px;
+        }
+        
+        .headline {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .accent {
+            color: #ff6b6b;
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .solution-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .solution-card:hover {
+            background: rgba(255, 107, 107, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .solution-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+        }
+        
+        .solution-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .solution-text {
+            font-size: 20px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .brand {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+            font-size: 20px;
+        }
+        
+        .progress {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .progress-bar {
+            width: 40px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+        }
+        
+        .progress-bar.active {
+            background: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="label">الحل العملي</div>
+        <div class="counter">6/7</div>
+    </div>
+    
+    <div class="content">
+        <h1 class="headline">
+            كيف <span class="accent">تبني</span> ثقة<br>
+            وتزيد مبيعاتك؟
+        </h1>
+        
+        <div class="solution-grid">
+            <div class="solution-card">
+                <div class="solution-icon">📱</div>
+                <div class="solution-title">سردية واضحة</div>
+                <div class="solution-text">اكتب قصة علامتك التجارية: من أنت، ليش تقدم هذا المنتج، وشلون يساعد الزبون العراقي.</div>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-icon">🎯</div>
+                <div class="solution-title">هوية بصرية موحدة</div>
+                <div class="solution-text">اختر لونين رئيسيين، خط واحد (Cairo)، ونمط صور ثابت يعكس جودة منتجك.</div>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-icon">💬</div>
+                <div class="solution-title">تفاعل يومي</div>
+                <div class="solution-text">رد على كل تعليق خلال ساعتين. التعليقات هي محادثات مبيعات مجانية.</div>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-icon">📊</div>
+                <div class="solution-title">قياس وتحليل</div>
+                <div class="solution-text">حلل أي منشور ينفع وأي واحد ما ينفع. ركز على اللي يولد تفاعل ومبيعات.</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="brand">@framex</div>
+        <div class="progress">
+            <div class="progress-bar active"></div>
+            <div class="progress-bar active"></div>
+            <div class="progress-bar active"></div>
+            <div class="progress-bar active"></div>
+            <div class="progress-bar active"></div>
+            <div class="progress-bar active"></div>
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+</body>
+</html>

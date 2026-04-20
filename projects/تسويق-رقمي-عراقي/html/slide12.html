@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسويق رقمي - الشريحة 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #0a0a0a;
+            color: white;
+            width: 1080px;
+            height: 1350px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+        
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .label {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ff6b6b;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .counter {
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .eyebrow {
+            color: #ff6b6b;
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .headline {
+            font-size: 96px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 40px;
+        }
+        
+        .accent {
+            color: #ff6b6b;
+        }
+        
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .brand {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+            font-size: 20px;
+        }
+        
+        .progress {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .progress-bar {
+            width: 40px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+        }
+        
+        .progress-bar.active {
+            background: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="label">تسويق رقمي</div>
+        <div class="counter">1/7</div>
+    </div>
+    
+    <div class="content">
+        <div class="eyebrow">للشركات الصغيرة في العراق</div>
+        <h1 class="headline">
+            لو <span class="accent">ما تدري</span><br>
+            كيف تبيع<br>
+            على النت
+        </h1>
+    </div>
+    
+    <div class="footer">
+        <div class="brand">@framex</div>
+        <div class="progress">
+            <div class="progress-bar active"></div>
+            <div class="progress-bar"></div>
+            <div class="progress-bar"></div>
+            <div class="progress-bar"></div>
+            <div class="progress-bar"></div>
+            <div class="progress-bar"></div>
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+</body>
+</html>

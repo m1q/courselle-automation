@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>FrameX - Slide 4</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #f7f7f5; --text: #111111; --accent: #ff6b4a; --line: rgba(17,17,17,0.06); }
+    * { box-sizing: border-box; font-family: 'Cairo', sans-serif; margin: 0; padding: 0; }
+    body { background: #dcdcdc; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .slide { width: 1080px; height: 1350px; background: var(--bg); color: var(--text); position: relative; overflow: hidden; }
+    .top { position: absolute; top: 80px; left: 80px; right: 80px; display: flex; justify-content: space-between; align-items: center; }
+    .label { font-size: 24px; font-weight: 800; border: 1px solid var(--text); padding: 12px 30px; border-radius: 999px; }
+    .content { padding: 250px 80px 0; }
+    .mini { font-size: 35px; font-weight: 700; color: var(--accent); margin-bottom: 20px; }
+    .title { font-size: 90px; font-weight: 900; line-height: 1.2; margin-bottom: 60px; }
+    .num-card { background: #fff; padding: 50px; border-radius: 35px; border: 1px solid var(--line); display: flex; gap: 40px; align-items: center; margin-bottom: 30px; }
+    .num { font-size: 45px; font-weight: 900; color: var(--accent); background: rgba(255,107,74,0.1); width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border-radius: 25px; flex-shrink: 0; }
+    .num-text h3 { font-size: 40px; margin-bottom: 10px; }
+    .num-text p { font-size: 28px; color: #666; font-weight: 600; line-height: 1.5; }
+    .footer { position: absolute; bottom: 60px; left: 80px; right: 80px; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-size: 32px; font-weight: 900; }
+    .progress span { width: 50px; height: 8px; border-radius: 10px; background: var(--line); display: inline-block; }
+    .progress span.active { width: 80px; background: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="top"><div class="label">نصائح FrameX</div><div class="counter" style="font-size:28px; font-weight:700; opacity:0.5;">4/7</div></div>
+    <div class="content">
+      <p class="mini">الغلطة الثانية</p>
+      <h1 class="title">ردك صاير <span style="color:var(--accent)">"آلي"</span></h1>
+      <div class="num-card"><div class="num">01</div><div class="num-text"><h3>Copy / Paste</h3><p>"أهلاً بك، السعر كذا، للتسليم دز عنوانك". رسالة باردة تحسسه إنك روبوت مو إنسان.</p></div></div>
+      <div class="num-card"><div class="num">02</div><div class="num-text"><h3>ما تفتح سوالف</h3><p>المفروض تسأله: شنو قياسك؟ لأي مناسبة تريده؟ حتى تخليه يندمج بالمحادثة.</p></div></div>
+    </div>
+    <div class="footer"><div class="brand">@framex</div><div class="progress"><span></span><span></span><span></span><span class="active"></span><span></span><span></span><span></span></div></div>
+  </div>
+</body>
+</html>

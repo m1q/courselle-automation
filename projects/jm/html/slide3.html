@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>FrameX - Slide 3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #f7f7f5; --text: #111111; --accent: #ff6b4a; --line: rgba(17,17,17,0.06); }
+    * { box-sizing: border-box; font-family: 'Cairo', sans-serif; margin: 0; padding: 0; }
+    body { background: #dcdcdc; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .slide { width: 1080px; height: 1350px; background: var(--bg); color: var(--text); position: relative; overflow: hidden; }
+    .top { position: absolute; top: 80px; left: 80px; right: 80px; display: flex; justify-content: space-between; align-items: center; }
+    .label { font-size: 24px; font-weight: 800; border: 1px solid var(--text); padding: 12px 30px; border-radius: 999px; }
+    .content { padding: 250px 80px 0; }
+    .mini { font-size: 35px; font-weight: 700; color: var(--accent); margin-bottom: 20px; }
+    .title { font-size: 90px; font-weight: 900; line-height: 1.2; margin-bottom: 50px; }
+    .checklist { display: flex; flex-direction: column; gap: 30px; margin-top: 40px; }
+    .check-item { background: #fff; padding: 40px; border-radius: 30px; display: flex; align-items: center; gap: 30px; font-size: 32px; font-weight: 700; border: 1px solid var(--line); }
+    .check-item::before { content: "✕"; background: #e74c3c; color: #fff; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
+    .footer { position: absolute; bottom: 60px; left: 80px; right: 80px; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-size: 32px; font-weight: 900; }
+    .progress span { width: 50px; height: 8px; border-radius: 10px; background: var(--line); display: inline-block; }
+    .progress span.active { width: 80px; background: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="top"><div class="label">نصائح FrameX</div><div class="counter" style="font-size:28px; font-weight:700; opacity:0.5;">3/7</div></div>
+    <div class="content">
+      <p class="mini">الغلطة الأولى</p>
+      <h1 class="title">تنطي السعر <span style="color:var(--accent)">"بسرعة"</span></h1>
+      <p style="font-size: 34px; font-weight: 600; color: #666; margin-bottom: 40px;">الرقم بدون "قيمة" يبين غالي دائماً. ليش خسرته؟</p>
+      <div class="checklist">
+        <div class="check-item">ما سألته ليش محتاج المنتج</div>
+        <div class="check-item">ما شرحت له الميزة اللي تميزك</div>
+        <div class="check-item">جاوبت بكلمة وحدة (السعر 25)</div>
+      </div>
+    </div>
+    <div class="footer"><div class="brand">@framex</div><div class="progress"><span></span><span></span><span class="active"></span><span></span><span></span><span></span><span></span></div></div>
+  </div>
+</body>
+</html>

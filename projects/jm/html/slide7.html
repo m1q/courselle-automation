@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>FrameX - Slide 7</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #f7f7f5; --text: #111111; --accent: #ff6b4a; }
+    * { box-sizing: border-box; font-family: 'Cairo', sans-serif; margin: 0; padding: 0; }
+    body { background: #dcdcdc; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .slide { width: 1080px; height: 1350px; background: var(--bg); color: var(--text); position: relative; overflow: hidden; }
+    .bg-word { position: absolute; top: 100px; right: -50px; font-size: 300px; font-weight: 900; color: rgba(17,17,17,0.03); z-index: 1; }
+    .top { position: absolute; top: 80px; left: 80px; right: 80px; display: flex; justify-content: space-between; align-items: center; z-index: 10; }
+    .label { font-size: 24px; font-weight: 800; border: 1px solid var(--text); padding: 12px 30px; border-radius: 999px; }
+    .content { padding: 250px 80px 0; position: relative; z-index: 10; text-align: center; }
+    .title { font-size: 110px; font-weight: 900; line-height: 1.1; margin-bottom: 60px; text-align: right; }
+    .cta-card { background: #111; color: #fff; padding: 80px 60px; border-radius: 50px; box-shadow: 0 50px 100px rgba(0,0,0,0.2); }
+    .cta-card p { font-size: 42px; font-weight: 700; line-height: 1.5; margin-bottom: 50px; }
+    .btn { display: inline-block; background: var(--accent); color: #fff; padding: 35px 80px; border-radius: 999px; font-size: 45px; font-weight: 900; text-decoration: none; }
+    .footer { position: absolute; bottom: 60px; left: 80px; right: 80px; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-size: 32px; font-weight: 900; }
+    .progress span { width: 50px; height: 8px; border-radius: 10px; background: rgba(0,0,0,0.05); display: inline-block; }
+    .progress span.active { width: 80px; background: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="bg-word">Done</div>
+    <div class="top"><div class="label">نصائح FrameX</div><div class="counter" style="font-size:28px; font-weight:700; opacity:0.5;">7/7</div></div>
+    <div class="content">
+      <h1 class="title">المبيعات فن..<br><span style="color:var(--accent)">مو بس إعلان!</span></h1>
+      <div class="cta-card">
+        <p>بـ FrameX، ما نطلق إعلانك ونعوفك.. نعلمك شلون ترد، شلون تقنع، وشلون تقفل البيعة.</p>
+        <div class="btn">ضاعف مبيعاتك ويانا</div>
+      </div>
+    </div>
+    <div class="footer"><div class="brand">@framex</div><div class="progress"><span></span><span></span><span></span><span></span><span></span><span></span><span class="active"></span></div></div>
+  </div>
+</body>
+</html>
