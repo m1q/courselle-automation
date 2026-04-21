@@ -1,0 +1,66 @@
+{
+  "name": "7-hapit",
+  "version": "1.0.0",
+  "createdAt": "2026-04-20T20:24:13.806Z",
+  "updatedAt": "2026-04-20T20:58:39.935Z",
+  "migratedAt": "2026-04-20T20:24:13.807Z",
+  "migratedFrom": "legacy",
+  "config": {
+    "viewport": {
+      "width": 1080,
+      "height": 1350
+    },
+    "waitMs": 700,
+    "exportFirstOnly": false
+  },
+  "slides": [
+    {
+      "filename": "slide1.html",
+      "size": 5643,
+      "migratedAt": "2026-04-20T20:24:13.807Z"
+    },
+    {
+      "filename": "slide2.html",
+      "size": 6587,
+      "migratedAt": "2026-04-20T20:24:13.807Z"
+    },
+    {
+      "filename": "slide3.html",
+      "size": 6614,
+      "migratedAt": "2026-04-20T20:24:13.807Z"
+    }
+  ],
+  "stats": {
+    "htmlFiles": 3,
+    "pngFiles": 3,
+    "lastExported": null
+  },
+  "legacy": {
+    "hasExportScript": true,
+    "exportScriptModified": "2026-04-16T15:41:11.003Z"
+  },
+  "package": {
+    "name": "7-hapit",
+    "version": "1.0.0",
+    "hasPlaywright": true
+  },
+  "exports": [
+    {
+      "timestamp": "2026-04-20T20:25:21.579Z",
+      "slidesExported": "all",
+      "firstOnly": false,
+      "batchExport": true
+    },
+    {
+      "timestamp": "2026-04-20T20:57:59.839Z",
+      "slidesExported": 1,
+      "firstOnly": true,
+      "batchExport": true
+    },
+    {
+      "timestamp": "2026-04-20T20:58:39.934Z",
+      "slidesExported": "all",
+      "firstOnly": false
+    }
+  ]
+}

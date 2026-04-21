@@ -19,7 +19,11 @@
   "author": "محمد حليم رحيم كريم",
   "license": "MIT",
   "devDependencies": {
+    "commander": "^11.1.0",
     "playwright": "^1.59.1",
     "prettier": "^3.0.0"
+  },
+  "bin": {
+    "courselle": "./cli/src/index.js"
   }
 }

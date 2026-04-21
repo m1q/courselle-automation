@@ -1,0 +1,26 @@
+{
+  "name": "single-test",
+  "version": "1.0.0",
+  "createdAt": "2026-04-20T20:24:13.910Z",
+  "updatedAt": "2026-04-20T20:24:13.910Z",
+  "migratedAt": "2026-04-20T20:24:13.910Z",
+  "migratedFrom": "legacy",
+  "config": {
+    "viewport": {
+      "width": 1080,
+      "height": 1350
+    },
+    "waitMs": 700,
+    "exportFirstOnly": false
+  },
+  "slides": [],
+  "stats": {
+    "htmlFiles": 0,
+    "pngFiles": 0,
+    "lastExported": null
+  },
+  "legacy": {
+    "hasExportScript": true,
+    "exportScriptModified": "2026-04-20T13:46:08.395Z"
+  }
+}

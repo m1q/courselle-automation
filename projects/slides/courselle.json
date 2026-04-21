@@ -1,0 +1,56 @@
+{
+  "name": "slides",
+  "version": "1.0.0",
+  "createdAt": "2026-04-20T20:24:13.910Z",
+  "updatedAt": "2026-04-21T01:28:02.613Z",
+  "migratedAt": "2026-04-20T20:24:13.910Z",
+  "migratedFrom": "legacy",
+  "config": {
+    "viewport": {
+      "width": 1080,
+      "height": 1350
+    },
+    "waitMs": 700,
+    "exportFirstOnly": false
+  },
+  "slides": [
+    {
+      "filename": "slide1.html",
+      "size": 4226,
+      "migratedAt": "2026-04-20T20:24:13.910Z"
+    }
+  ],
+  "stats": {
+    "htmlFiles": 1,
+    "pngFiles": 0,
+    "lastExported": null
+  },
+  "legacy": {
+    "hasExportScript": true,
+    "exportScriptModified": "2026-04-20T13:47:21.793Z"
+  },
+  "exports": [
+    {
+      "timestamp": "2026-04-20T20:25:00.890Z",
+      "slidesExported": "all",
+      "firstOnly": false
+    },
+    {
+      "timestamp": "2026-04-20T20:26:33.379Z",
+      "slidesExported": "all",
+      "firstOnly": false,
+      "batchExport": true
+    },
+    {
+      "timestamp": "2026-04-20T20:58:22.479Z",
+      "slidesExported": 1,
+      "firstOnly": true,
+      "batchExport": true
+    },
+    {
+      "timestamp": "2026-04-21T01:28:02.610Z",
+      "slidesExported": 1,
+      "firstOnly": true
+    }
+  ]
+}

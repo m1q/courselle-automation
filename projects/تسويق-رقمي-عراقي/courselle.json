@@ -1,0 +1,81 @@
+{
+  "name": "تسويق-رقمي-عراقي",
+  "version": "1.0.0",
+  "createdAt": "2026-04-20T20:24:13.912Z",
+  "updatedAt": "2026-04-20T20:58:32.198Z",
+  "migratedAt": "2026-04-20T20:24:13.912Z",
+  "migratedFrom": "legacy",
+  "config": {
+    "viewport": {
+      "width": 1080,
+      "height": 1350
+    },
+    "waitMs": 700,
+    "exportFirstOnly": false
+  },
+  "slides": [
+    {
+      "filename": "slide12.html",
+      "size": 3769,
+      "migratedAt": "2026-04-20T20:24:13.912Z"
+    },
+    {
+      "filename": "slide22.html",
+      "size": 5275,
+      "migratedAt": "2026-04-20T20:24:13.912Z"
+    },
+    {
+      "filename": "slide32.html",
+      "size": 5884,
+      "migratedAt": "2026-04-20T20:24:13.912Z"
+    },
+    {
+      "filename": "slide42.html",
+      "size": 6223,
+      "migratedAt": "2026-04-20T20:24:13.912Z"
+    },
+    {
+      "filename": "slide52.html",
+      "size": 5967,
+      "migratedAt": "2026-04-20T20:24:13.912Z"
+    },
+    {
+      "filename": "slide62.html",
+      "size": 6102,
+      "migratedAt": "2026-04-20T20:24:13.912Z"
+    },
+    {
+      "filename": "slide72.html",
+      "size": 5829,
+      "migratedAt": "2026-04-20T20:24:13.912Z"
+    }
+  ],
+  "stats": {
+    "htmlFiles": 7,
+    "pngFiles": 14,
+    "lastExported": null
+  },
+  "legacy": {
+    "hasExportScript": true,
+    "exportScriptModified": "2026-04-16T19:43:08.499Z"
+  },
+  "package": {
+    "name": "تسويق-رقمي-عراقي",
+    "version": "1.0.0",
+    "hasPlaywright": false
+  },
+  "exports": [
+    {
+      "timestamp": "2026-04-20T20:26:53.529Z",
+      "slidesExported": "all",
+      "firstOnly": false,
+      "batchExport": true
+    },
+    {
+      "timestamp": "2026-04-20T20:58:32.197Z",
+      "slidesExported": 1,
+      "firstOnly": true,
+      "batchExport": true
+    }
+  ]
+}

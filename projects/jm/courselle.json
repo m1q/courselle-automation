@@ -1,0 +1,81 @@
+{
+  "name": "jm",
+  "version": "1.0.0",
+  "createdAt": "2026-04-20T20:24:13.908Z",
+  "updatedAt": "2026-04-20T20:58:18.633Z",
+  "migratedAt": "2026-04-20T20:24:13.908Z",
+  "migratedFrom": "legacy",
+  "config": {
+    "viewport": {
+      "width": 1080,
+      "height": 1350
+    },
+    "waitMs": 700,
+    "exportFirstOnly": false
+  },
+  "slides": [
+    {
+      "filename": "slide1.html",
+      "size": 2828,
+      "migratedAt": "2026-04-20T20:24:13.908Z"
+    },
+    {
+      "filename": "slide2.html",
+      "size": 3124,
+      "migratedAt": "2026-04-20T20:24:13.908Z"
+    },
+    {
+      "filename": "slide3.html",
+      "size": 3125,
+      "migratedAt": "2026-04-20T20:24:13.908Z"
+    },
+    {
+      "filename": "slide4.html",
+      "size": 3224,
+      "migratedAt": "2026-04-20T20:24:13.908Z"
+    },
+    {
+      "filename": "slide5.html",
+      "size": 2698,
+      "migratedAt": "2026-04-20T20:24:13.908Z"
+    },
+    {
+      "filename": "slide6.html",
+      "size": 5161,
+      "migratedAt": "2026-04-20T20:24:13.908Z"
+    },
+    {
+      "filename": "slide7.html",
+      "size": 2944,
+      "migratedAt": "2026-04-20T20:24:13.908Z"
+    }
+  ],
+  "stats": {
+    "htmlFiles": 7,
+    "pngFiles": 0,
+    "lastExported": null
+  },
+  "legacy": {
+    "hasExportScript": true,
+    "exportScriptModified": "2026-04-20T18:38:09.226Z"
+  },
+  "package": {
+    "name": "jm",
+    "version": "1.0.0",
+    "hasPlaywright": true
+  },
+  "exports": [
+    {
+      "timestamp": "2026-04-20T20:26:29.576Z",
+      "slidesExported": "all",
+      "firstOnly": false,
+      "batchExport": true
+    },
+    {
+      "timestamp": "2026-04-20T20:58:18.633Z",
+      "slidesExported": 1,
+      "firstOnly": true,
+      "batchExport": true
+    }
+  ]
+}

@@ -15,7 +15,7 @@ Both contain the same information about setup and usage.
 
 ### Root-level npm scripts (from package.json)
 - `npm run export` – Export a single slide using `src/export.js` (basic example)
-- `npm run export-all` – Run `scripts/export-all-projects.js` to export all sub‑projects
+- `npm run export-all` – Run `scripts/export-all-projects.js` to export all sub‑projects (note: script name mismatch – `export-all` in package.json calls `scripts/export-all.js` which does not exist; actual script is `scripts/export-all-projects.js`)
 - `npm run clean` – Remove files from `output/` (not used by default)
 - `npm run setup` – Install dependencies
 
@@ -36,6 +36,11 @@ cd projects/<project-name>
 npm install   # installs Playwright locally (optional)
 node export-all.js
 ```
+
+### Legacy scripts (superseded by projectctl.sh)
+- `scripts/export_project.sh` – Legacy export script for a single project
+- `scripts/prepare_project.sh` – Legacy preparation script
+- `scripts/prepare_inorder_project.sh` – Legacy ordered preparation script
 
 ## Architecture
 
@@ -80,7 +85,16 @@ These can be overridden by setting the variables before running the script or ed
 ## Notes for Development
 
 - **HTML slide structure**: Each slide should be contained in an element with class `slide` for optimal screenshot cropping. If no `.slide` element exists, the entire page is captured.
-- **File naming**: Slides must be named `slide1.html`, `slide2.html`, … (numbers can be any order; they are sorted numerically).
+- **File naming**: Slides must be named `slide1.html`, `slide2.html`, … (numbers can be any order; they are sorted numerically). The script also supports `preview.html` and `preview (N).html` formats (used by Canva exports).
 - **Playwright installation**: The root `package.json` includes Playwright as a dev dependency. Each sub‑project can also have its own `package.json` (created by `projectctl.sh`). The `projectctl.sh` script ensures Playwright is installed in the root and browsers are available.
 - **Windows integration**: The preparation scripts expect HTML files in `/mnt/c/Users/user/Downloads` (Windows downloads folder mounted in WSL). Adjust `WIN_DOWNLOADS` in `projectctl.sh` if needed.
-- **Git ignored**: `node_modules/`, `output/`, `projects/*/png/`, `projects/*/node_modules/`, and `.playwright/` are ignored.
+- **Project name sanitization**: `projectctl.sh` sanitizes project names by replacing characters `< > : " / \\ | ? *` with hyphens and trimming spaces.
+- **Git ignored**: `node_modules/`, `output/`, `projects/*/png/`, `projects/*/node_modules/`, and `.playwright/` are ignored. PNG files inside `projects/*/html/` are kept (exception).
+
+## Troubleshooting
+
+- **Playwright browser not installed**: Run `npx playwright install chromium` in the repo root.
+- **No HTML files found in Downloads**: Ensure `WIN_DOWNLOADS` points to the correct Windows Downloads folder mounted in WSL.
+- **Export fails with font loading errors**: Increase `WAIT_MS` environment variable to allow more time for fonts to load.
+- **Package.json script mismatch**: The `npm run export-all` script points to `scripts/export-all.js` which does not exist. Use `node scripts/export-all-projects.js` directly or update package.json.
+- **Project with special characters**: `projectctl.sh` will sanitize names, but avoid using problematic characters in project names.
